@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 600px;
+    height: 480px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .header-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #10B981;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 4px;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .item-card {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .item-badge {
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: Consolas, monospace;
+    white-space: nowrap;
+  }
+  .item-content {
+    flex: 1;
+  }
+  .item-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 2px;
+  }
+  .item-sub {
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-note {
+    font-size: 11px;
+    color: #047857;
+    background: #ECFDF5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+    font-weight: 700;
+    border: 1px solid #A7F3D0;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div class="header-tag">Statutory &amp; Regulatory Alignment</div>
+      <div class="card-title">National Legal &amp; Security Standards</div>
+    </div>
+    <div class="list-container">
+      <div class="item-card">
+        <div class="item-badge" style="background: #E0F2FE; color: #0070C0;">SEC 63 BSA</div>
+        <div class="item-content">
+          <div class="item-title">Bharatiya Sakshya Adhiniyam 2023</div>
+          <div class="item-sub">Automated cryptographic evidence certificate admissible in criminal trials</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-badge" style="background: #DCFCE7; color: #15803D;">DPDP ACT</div>
+        <div class="item-content">
+          <div class="item-title">Digital Personal Data Protection Act 2023</div>
+          <div class="item-sub">Section 8 data minimization: zero citizen PII persistence in storage</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-badge" style="background: #EDE9FE; color: #7C3AED;">UIDAI D5</div>
+        <div class="item-content">
+          <div class="item-title">UIDAI &amp; ISO/IEC Checksum Standards</div>
+          <div class="item-sub">Dihedral D5 mathematical polynomial for zero false Aadhaar generation</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-badge" style="background: #FEF3C7; color: #B45309;">MHA / I4C</div>
+        <div class="item-content">
+          <div class="item-title">National Cybercrime Telemetry</div>
+          <div class="item-sub">Direct pattern clustering across Mewat and Jamtara cybercrime hotspots</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-note">⚖️ Legally Validated | SHA-256 Tamper-Proof Chain of Custody</div>
+  </div>
+</body>
+</html>

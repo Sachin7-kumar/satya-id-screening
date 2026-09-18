@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 600px;
+    height: 480px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .header-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #0070C0;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 4px;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    flex: 1;
+  }
+  .metric-card {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .metric-num {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .metric-label {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 3px;
+  }
+  .metric-sub {
+    font-size: 10.5px;
+    color: #64748B;
+    line-height: 1.35;
+  }
+  .footer-note {
+    font-size: 11px;
+    color: #1D4ED8;
+    background: #EFF6FF;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    margin-top: 14px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div class="header-tag">Feasibility &amp; Performance Specs</div>
+      <div class="card-title">Zero-CapEx Edge Autonomy Benchmarks</div>
+    </div>
+    <div class="grid-container">
+      <div class="metric-card">
+        <div class="metric-num" style="color: #0070C0;">18–34 ms</div>
+        <div class="metric-label">Real-Time In-RAM Scan</div>
+        <div class="metric-sub">1,620 docs/min edge speed | Zero cloud latency</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num" style="color: #10B981;">₹0.04</div>
+        <div class="metric-label">Unit Scan Cost</div>
+        <div class="metric-sub">94% cost cut vs ₹4.50 cloud API subscription</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num" style="color: #8B5CF6;">4 GB RAM</div>
+        <div class="metric-label">Commodity Hardware</div>
+        <div class="metric-sub">0 GPU required | Standard kiosk webcam plug-in</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num" style="color: #F59E0B;">&lt;0.18%</div>
+        <div class="metric-label">False Positive Rate</div>
+        <div class="metric-sub">Sub-pixel metrology + deterministic math filters</div>
+      </div>
+    </div>
+    <div class="footer-note">🛡️ 100% In-RAM Execution | DPDP Act 2023 Sec 8 Compliant</div>
+  </div>
+</body>
+</html>

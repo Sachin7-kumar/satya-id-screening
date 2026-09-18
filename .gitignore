@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Scratch & temporary slide generation folders
+template_unzipped/
+template_2026_unzipped/
+test_step_dir/
+test_verify_pptx/
+test_rezip.pptx
+test_step.pptx
+slide_renders/
+slide_renders_2026/
+slide_renders_7slides/
+slide_renders_2026_7slides/
+sih_official_build_*/
+*.zip
+prototype_preview.png
+prototype_minimal.png
+prototype_full.png
+bsa_certificate_preview.png
+bsa_certificate_seal_preview.png

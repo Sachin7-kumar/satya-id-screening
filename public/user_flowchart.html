@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1400px;
+    height: 340px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .flow-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #ffffff;
+    border: 2px solid #0070C0;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 30px rgba(0, 112, 192, 0.12);
+  }
+  .step-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 250px;
+  }
+  .step-card.active {
+    border-color: #0070C0;
+    background: #F0F7FF;
+  }
+  .step-card.cert {
+    border-color: #10B981;
+    background: #ECFDF5;
+  }
+  .step-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0070C0;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 112, 192, 0.3);
+  }
+  .step-card.cert .step-badge {
+    background: #10B981;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+  }
+  .step-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .step-desc {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .step-tag {
+    margin-top: auto;
+    background: #E2E8F0;
+    color: #0070C0;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: Consolas, monospace;
+  }
+  .step-card.cert .step-tag {
+    background: #D1FAE5;
+    color: #059669;
+  }
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0070C0;
+    font-size: 26px;
+    font-weight: 900;
+    padding: 0 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="flow-container">
+    
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div class="step-badge">1</div>
+      <div class="step-title">Ingestion &amp; Hashing</div>
+      <div class="step-desc">Webcam capture, scanner, or API drop ingested directly into volatile RAM. No disk writes.</div>
+      <div class="step-tag">SHA-256 Digest</div>
+    </div>
+
+    <div class="arrow">➔</div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div class="step-badge">2</div>
+      <div class="step-title">Math Invariants</div>
+      <div class="step-desc">Deterministic polynomial validation on statutory ID numbers with surname cross-checking.</div>
+      <div class="step-tag">Verhoeff D5 | &lt;5ms</div>
+    </div>
+
+    <div class="arrow">➔</div>
+
+    <!-- Step 3 -->
+    <div class="step-card active">
+      <div class="step-badge">3</div>
+      <div class="step-title">Compression Physics</div>
+      <div class="step-desc">Adaptive Error Level Analysis (Q=92%) detects localized resaving and spliced text pixels.</div>
+      <div class="step-tag">ELA Heatmap (10x-45x)</div>
+    </div>
+
+    <div class="arrow">➔</div>
+
+    <!-- Step 4 -->
+    <div class="step-card">
+      <div class="step-badge">4</div>
+      <div class="step-title">Metrology &amp; AI</div>
+      <div class="step-desc">Sub-pixel font baseline variance (&sigma; &gt; 1.85px) + Gemini AI multimodal semantic inquest.</div>
+      <div class="step-tag">Laplacian &amp; Gemini</div>
+    </div>
+
+    <div class="arrow">➔</div>
+
+    <!-- Step 5 -->
+    <div class="step-card cert">
+      <div class="step-badge">✓</div>
+      <div class="step-title">Evidence Export</div>
+      <div class="step-desc">Weighted Trust Index (0–100%) output + cryptographic PDF certificate for prosecution.</div>
+      <div class="step-tag">Sec 63 BSA 2023</div>
+    </div>
+
+  </div>
+</body>
+</html>

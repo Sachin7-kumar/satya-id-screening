@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 600px;
+    height: 480px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    background: #0F172A;
+    border: 2px solid #1E293B;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    color: #F8FAFC;
+  }
+  .card-header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .header-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #38BDF8;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 4px;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .item-card {
+    background: #1E293B;
+    border: 1.5px solid #334155;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .item-badge {
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: Consolas, monospace;
+    white-space: nowrap;
+  }
+  .item-content {
+    flex: 1;
+  }
+  .item-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #F1F5F9;
+    margin-bottom: 2px;
+  }
+  .item-sub {
+    font-size: 10px;
+    color: #94A3B8;
+  }
+  .footer-note {
+    font-size: 11px;
+    color: #38BDF8;
+    background: rgba(14, 165, 233, 0.15);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+    font-weight: 700;
+    border: 1px solid #0284C7;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div class="header-tag">Live System Architecture HUD</div>
+      <div class="card-title">Operational Multi-Spectral Forensic HUD</div>
+    </div>
+    <div class="list-container">
+      <div class="item-card">
+        <div class="item-badge" style="background: rgba(14, 165, 233, 0.2); color: #38BDF8;">ELA HEATMAP</div>
+        <div class="item-content">
+          <div class="item-title">Multi-Spectral ELA Visualizer</div>
+          <div class="item-sub">10x–45x dynamic gain isolating compression &amp; splice anomalies</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-badge" style="background: rgba(168, 85, 247, 0.2); color: #C084FC;">METROLOGY</div>
+        <div class="item-content">
+          <div class="item-title">Sub-Pixel Font Drift Metrology</div>
+          <div class="item-sub">Baseline alignment (σ &gt; 1.85px) &amp; stroke variance verification</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-badge" style="background: rgba(52, 211, 153, 0.2); color: #34D399;">3D STRATA</div>
+        <div class="item-content">
+          <div class="item-title">3D Strata Decomposition</div>
+          <div class="item-sub">Interactive 3D depth separation: substrate, ink &amp; digital overlay</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-badge" style="background: rgba(251, 191, 36, 0.2); color: #FBBF24;">SEC 63 CERT</div>
+        <div class="item-content">
+          <div class="item-title">Automated Court Evidence Certificate</div>
+          <div class="item-sub">Instant legal PDF report with SHA-256 seal &amp; device metadata</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-note">⚡ Fully Functional Prototype: React 19 + Vite | WebAssembly | Node.js</div>
+  </div>
+</body>
+</html>
