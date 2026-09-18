@@ -257,7 +257,6 @@ export default function App() {
         setCurrentTestCase(customCase);
         setSourceCanvas(canvas);
         runForensics(customCase, canvas, elaScale, elaThreshold);
-        setIsEditDataOpen(true);
       };
       img.src = event.target.result;
     };
