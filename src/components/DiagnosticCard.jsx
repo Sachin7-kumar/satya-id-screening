@@ -138,7 +138,11 @@ export default function DiagnosticCard({ report, onOpenCertificate, onOpenEditDa
                 <div className="tier-name">1. Algorithmic Invariants</div>
                 <div className="tier-sub">{algoResult.message}</div>
               </td>
-              <td>Verhoeff D5 / PAN / MRZ</td>
+              <td>
+                <span style={{ fontWeight: 600, color: 'var(--gov-navy)' }}>
+                  {algoResult.standard || 'UIDAI Verhoeff / ITD PAN / ICAO MRZ'}
+                </span>
+              </td>
               <td style={{ textAlign: 'center' }}>
                 <span className={`status-pill ${algoResult.isValid ? 'pass' : 'fail'}`}>
                   {algoResult.isValid ? '✓ PASS' : '✗ FAIL'}

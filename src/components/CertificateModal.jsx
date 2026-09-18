@@ -165,7 +165,7 @@ export default function CertificateModal({ isOpen, onClose, report, canvas }) {
               {/* Tier 1: Checksums */}
               <tr>
                 <td><strong>1. Algorithmic Invariants</strong></td>
-                <td>Verhoeff D5 / PAN / MRZ</td>
+                <td><strong>{report.algoResult?.standard || 'Statutory Alphanumeric Invariant'}</strong></td>
                 <td style={{ textAlign: 'center' }}>
                   <span className={`cert-pill ${report.algoResult.isValid ? 'pill-pass' : 'pill-fail'}`}>
                     {report.algoResult.isValid ? '✓ PASS' : '✗ FAIL'}

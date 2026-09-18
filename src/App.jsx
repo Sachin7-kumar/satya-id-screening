@@ -63,33 +63,8 @@ export default function App() {
     try {
       const docData = testCase.data || {};
 
-      // 1. Algorithmic Checksum
-      let algoResult = { isValid: true, status: 'VALID', message: 'Mathematical rules satisfied.' };
-      if (
-        !docData.idNumber ||
-        docData.idNumber.includes('NOT PROVIDED') ||
-        testCase.id === 'case_no_data_given' ||
-        testCase.type.includes('No Data Given')
-      ) {
-        algoResult = {
-          isValid: false,
-          status: 'NO_DATA_GIVEN',
-          message: 'CRITICAL INSUFFICIENCY: Mandatory document number and cardholder particulars are absent / unrecorded.'
-        };
-      } else if (testCase.type.includes('Aadhaar')) {
-        algoResult = ChecksumEngine.validateAadhaarVerhoeff(docData.idNumber);
-      } else if (testCase.type.includes('PAN')) {
-        algoResult = ChecksumEngine.validatePAN(docData.idNumber, docData.fullName?.split(' ').pop());
-      } else if (testCase.type.includes('Passport')) {
-        const mrzValid = ChecksumEngine.validateMRZWeight(docData.mrzLine2?.slice(0, 10));
-        algoResult = {
-          isValid: mrzValid,
-          status: mrzValid ? 'VALID_MRZ' : 'MRZ_CHECKSUM_ERROR',
-          message: mrzValid
-            ? 'ICAO Doc 9303 standard 7-3-1 weight verified for passport zone.'
-            : 'Passport MRZ checksum failure.'
-        };
-      }
+      // 1. Algorithmic Checksum & Invariants (Verhoeff D5 / PAN / MRZ / EPIC)
+      const algoResult = ChecksumEngine.validateDocument(testCase);
 
       // 2. ELA Analysis
       const ela = await ELAEngine.analyze(canvas, {
@@ -323,6 +298,10 @@ export default function App() {
       const caseParam = urlParams.get('case');
       if (caseParam) {
         handleSelectCase(caseParam);
+      }
+      const certParam = urlParams.get('cert');
+      if (certParam === 'open' || certParam === 'true') {
+        setIsCertOpen(true);
       }
     } catch {
       // Standby state by default
