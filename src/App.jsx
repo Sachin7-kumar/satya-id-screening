@@ -318,7 +318,13 @@ export default function App() {
 
   // Initial load
   useEffect(() => {
-    handleSelectCase('case_aadhaar_forged');
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const caseParam = urlParams.get('case');
+      handleSelectCase(caseParam || 'case_aadhaar_forged');
+    } catch {
+      handleSelectCase('case_aadhaar_forged');
+    }
   }, [handleSelectCase]);
 
   return (
