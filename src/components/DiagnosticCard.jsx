@@ -8,11 +8,35 @@ export default function DiagnosticCard({ report, onOpenCertificate, onOpenEditDa
   if (!report) {
     return (
       <div className="gov-card-container diagnostic-card-gov">
-        <div className="gov-card-body" style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>⌛</div>
-          <div style={{ fontWeight: 800, color: 'var(--gov-navy)' }}>AWAITING FORENSIC INGESTION</div>
-          <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-            Select an evidence test case or upload a document card to execute 5-tier screening.
+        <div className="gov-card-header">
+          <div className="gov-card-title">
+            <span>⚖️</span> OFFICIAL FORENSIC EXAMINATION REPORT
+          </div>
+          <div className="header-case-badge">STATUS: STANDBY</div>
+        </div>
+        <div className="gov-card-body" style={{ textAlign: 'center', padding: '3.8rem 1.5rem' }}>
+          <div style={{
+            width: '64px',
+            height: '64px',
+            borderRadius: '50%',
+            background: '#F8FAFC',
+            border: '2px solid #CBD5E1',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.8rem',
+            marginBottom: '0.85rem'
+          }}>
+            ⚖️
+          </div>
+          <div style={{ fontWeight: 800, color: 'var(--gov-navy)', fontSize: '0.98rem', marginBottom: '0.4rem' }}>
+            AWAITING EVIDENCE RECORD INGESTION
+          </div>
+          <div style={{ fontSize: '0.76rem', color: '#64748B', maxWidth: '360px', margin: '0 auto 1.25rem auto', lineHeight: 1.5 }}>
+            No document record currently in volatile memory. Select an evidence scenario or upload a document card to execute 5-tier statutory forensic verification.
+          </div>
+          <div style={{ display: 'inline-block', background: '#F1F5F9', border: '1px solid #CBD5E1', padding: '0.4rem 0.85rem', borderRadius: '4px', fontSize: '0.72rem', color: 'var(--gov-navy)' }}>
+            <strong>Statutory Admissibility:</strong> Section 63 BSA 2023 &bull; Section 8 DPDP Act 2023
           </div>
         </div>
       </div>

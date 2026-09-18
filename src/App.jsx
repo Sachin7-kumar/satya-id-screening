@@ -16,7 +16,7 @@ import { FontMetrologyEngine } from './forensics/fontAnalysis';
 import { FaceMorphEngine } from './forensics/faceMorph';
 
 export default function App() {
-  const [activeCaseId, setActiveCaseId] = useState('case_aadhaar_forged');
+  const [activeCaseId, setActiveCaseId] = useState(null);
   const [currentTestCase, setCurrentTestCase] = useState(null);
   const [sourceCanvas, setSourceCanvas] = useState(null);
   const [elaResult, setElaResult] = useState(null);
@@ -316,14 +316,16 @@ export default function App() {
     }
   };
 
-  // Initial load
+  // Initial load: Only load if explicitly provided in query params (e.g. ?case=...), otherwise start in clean standby state
   useEffect(() => {
     try {
       const urlParams = new URLSearchParams(window.location.search);
       const caseParam = urlParams.get('case');
-      handleSelectCase(caseParam || 'case_aadhaar_forged');
+      if (caseParam) {
+        handleSelectCase(caseParam);
+      }
     } catch {
-      handleSelectCase('case_aadhaar_forged');
+      // Standby state by default
     }
   }, [handleSelectCase]);
 

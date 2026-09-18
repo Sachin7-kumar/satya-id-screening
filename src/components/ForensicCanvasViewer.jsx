@@ -177,8 +177,57 @@ export default function ForensicCanvasViewer({
       )}
 
       {/* Canvas Viewport Body */}
+      {/* Canvas Viewport Body */}
       <div className="gov-canvas-body">
-        {viewMode === 'compare' ? (
+        {!sourceCanvas ? (
+          <div className="gov-canvas-standby" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '4rem 1.5rem',
+            textAlign: 'center',
+            color: 'var(--text-secondary)'
+          }}>
+            <div style={{
+              width: '76px',
+              height: '76px',
+              borderRadius: '50%',
+              background: '#FFFFFF',
+              border: '2px dashed var(--gov-navy)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '2.2rem',
+              marginBottom: '1rem',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+            }}>
+              📄
+            </div>
+            <h3 style={{ margin: '0 0 0.4rem 0', color: 'var(--gov-navy)', fontSize: '1.05rem', fontWeight: 800 }}>
+              NO IDENTITY DOCUMENT INGESTED
+            </h3>
+            <p style={{ margin: '0 auto 1.25rem auto', maxWidth: '440px', fontSize: '0.78rem', color: '#64748B', lineHeight: 1.5 }}>
+              Awaiting citizen evidence record. Select an official scenario from the test suite above, or upload an identity document (Aadhaar, PAN, Passport, Voter ID) to initiate forensic screening.
+            </p>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.6rem',
+              background: '#FFFFFF',
+              border: '1px solid var(--gov-border-light)',
+              padding: '0.4rem 0.95rem',
+              borderRadius: '4px',
+              fontSize: '0.72rem',
+              color: 'var(--gov-navy)',
+              fontFamily: 'var(--font-mono)'
+            }}>
+              <span>🛡️ 100% In-RAM Local Edge</span>
+              <span>&bull;</span>
+              <span>⚖️ Sec. 63 BSA 2023 Compliant</span>
+            </div>
+          </div>
+        ) : viewMode === 'compare' ? (
           <DiffCompareSlider
             originalCanvas={sourceCanvas}
             elaCanvas={elaResult ? elaResult.elaCanvas : sourceCanvas}
@@ -200,9 +249,9 @@ export default function ForensicCanvasViewer({
 
       <div className="gov-canvas-footer">
         <div className="canvas-footer-info">
-          <span>Target: <strong>{testCase?.name || 'Document'}</strong></span>
+          <span>Target: <strong>{testCase?.name || 'Awaiting Evidence Ingestion'}</strong></span>
           <span>&bull;</span>
-          <span>Resolution: <strong>{sourceCanvas ? `${sourceCanvas.width}x${sourceCanvas.height}px` : 'N/A'}</strong></span>
+          <span>Resolution: <strong>{sourceCanvas ? `${sourceCanvas.width}x${sourceCanvas.height}px` : 'Standby'}</strong></span>
         </div>
         <div className="canvas-footer-tag">
           {viewMode === 'ela' ? 'Adaptive Error Level Analysis (Q=92%)' : viewMode === 'overlay' ? 'Dual-Layer Pixel Differencing' : 'Volatile In-RAM Buffer'}

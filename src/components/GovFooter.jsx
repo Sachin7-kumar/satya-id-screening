@@ -9,7 +9,7 @@ export default function GovFooter() {
             <strong>भारत सरकार | Government of India</strong> &bull; Ministry of Home Affairs (MHA) &bull; Indian Cyber Crime Coordination Centre (I4C)
           </div>
           <div className="footer-line-2">
-            सत्य-ID (Problem Statement: SIH1608) &bull; 100% In-RAM Execution Conforming to Section 63 BSA 2023 &amp; Section 8 DPDP Act 2023.
+            सत्य-ID (Problem Statement: SIH26188) &bull; 100% In-RAM Execution Conforming to Section 63 BSA 2023 &amp; Section 8 DPDP Act 2023.
           </div>
         </div>
 

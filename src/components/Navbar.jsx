@@ -27,7 +27,7 @@ export default function Navbar({ onOpenPresentation, onOpenGemini, onOpenCertifi
             </div>
             <h1 className="portal-main-title">
               सत्य-ID <span className="title-divider">/</span> SATYA-ID
-              <span className="ps-id-badge">SIH1608</span>
+              <span className="ps-id-badge">SIH26188</span>
             </h1>
             <div className="portal-sub-title">
               National AI-Powered Fake Identity &amp; Document Screening System (100% In-RAM Local Edge)

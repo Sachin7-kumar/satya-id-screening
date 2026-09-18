@@ -19,7 +19,7 @@ export const OFFICIAL_SIH_6_SLIDES = [
         </div>
 
         <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; font-size: 1.05rem;">
-          <div><strong style="color: var(--accent-cyan);">• Problem Statement ID –</strong> <span style="font-family: var(--font-mono); color: #fff;">SIH1608 (Ministry of Home Affairs)</span></div>
+          <div><strong style="color: var(--accent-cyan);">• Problem Statement ID –</strong> <span style="font-family: var(--font-mono); color: #fff;">SIH26188 (Ministry of Home Affairs)</span></div>
           <div><strong style="color: var(--accent-cyan);">• Problem Statement Title-</strong> <span style="font-weight: 800; color: #fff;">AI-Based Fake Identity &amp; Document Screening System</span></div>
           <div><strong style="color: var(--accent-cyan);">• Theme-</strong> <span style="color: #fff;">Security &amp; Surveillance / Cyber Security / Smart Automation</span></div>
           <div><strong style="color: var(--accent-cyan);">• PS Category- Software/Hardware:</strong> <span style="color: #fff;">Software</span></div>
@@ -29,7 +29,7 @@ export const OFFICIAL_SIH_6_SLIDES = [
         </div>
       </div>
     `,
-    notes: "Respected Judges, we are Team SATYA-ID presenting our solution for the Ministry of Home Affairs on Problem Statement ID SIH1608: 'AI-Based Fake Identity & Document Screening System'. Today, we introduce an explainable, multi-spectral forensic screening engine built specifically for Indian identity infrastructure adhering strictly to the official 6-slide SIH 2026 format."
+    notes: "Respected Judges, we are Team SATYA-ID presenting our solution for the Ministry of Home Affairs on Problem Statement ID SIH26188: 'AI-Based Fake Identity & Document Screening System'. Today, we introduce an explainable, multi-spectral forensic screening engine built specifically for Indian identity infrastructure adhering strictly to the official 6-slide SIH 2026 format."
   },
   {
     id: 2,
