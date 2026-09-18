@@ -45,28 +45,93 @@ export default function CardDataModal({ isOpen, onClose, currentTestCase, onSave
 
   const cleanId = String(formData.idNumber || '').trim().replace(/[\s\-_./]/g, '');
   let liveFeedback = null;
-  if (formData.docType === 'Aadhaar Card' && cleanId && cleanId !== 'NOT PROVIDED') {
-    if (/^([Xx*•]{8})(\d{4})$/.test(cleanId) || /^([Xx*•]{4}[Xx*•]{4})(\d{4})$/.test(cleanId)) {
-      liveFeedback = {
-        type: 'masked',
-        color: '#0284C7',
-        bg: '#F0F9FF',
-        border: '#BAE6FD',
-        icon: '🔒',
-        title: 'Statutory Masked Aadhaar (UIDAI Privacy Format)',
-        detail: `Valid privacy-compliant masked identifier (XXXX-XXXX-${cleanId.slice(-4)}). Preserves privacy pursuant to Section 8 DPDP Act 2023.`
-      };
-    } else if (/^\d{12}$/.test(cleanId)) {
-      const vResult = ChecksumEngine.validateAadhaarVerhoeff(cleanId);
-      if (vResult.isValid) {
+
+  if (cleanId && cleanId !== 'NOT PROVIDED') {
+    const isAadhaarType = formData.docType.includes('Aadhaar') || /aad*ha*r|uid/i.test(formData.docType);
+    const isPanType = formData.docType.includes('PAN') || /pan/i.test(formData.docType);
+    const isPassportType = formData.docType.includes('Passport') || /pass(port)?/i.test(formData.docType);
+
+    if (isAadhaarType || /^\d{12}$/.test(cleanId) || /^\d{16}$/.test(cleanId) || /^([Xx*•]{8})(\d{4})$/.test(cleanId) || /^([Xx*•]{4}[Xx*•]{4})(\d{4})$/.test(cleanId)) {
+      if (/^([Xx*•]{8})(\d{4})$/.test(cleanId) || /^([Xx*•]{4}[Xx*•]{4})(\d{4})$/.test(cleanId)) {
+        liveFeedback = {
+          type: 'masked',
+          color: '#0284C7',
+          bg: '#F0F9FF',
+          border: '#BAE6FD',
+          icon: '🔒',
+          title: 'Statutory Masked Aadhaar (UIDAI Privacy Format)',
+          detail: `Valid privacy-compliant masked identifier (XXXX-XXXX-${cleanId.slice(-4)}). Preserves privacy pursuant to Section 8 DPDP Act 2023.`
+        };
+      } else if (/^\d{16}$/.test(cleanId)) {
+        const vResult = ChecksumEngine.validateAadhaarVerhoeff(cleanId);
+        if (vResult.isValid) {
+          liveFeedback = {
+            type: 'valid',
+            color: '#16A34A',
+            bg: '#F0FDF4',
+            border: '#BBF7D0',
+            icon: '✓',
+            title: 'UIDAI 16-Digit Virtual ID (VID) Satisfied (c = 0)',
+            detail: '16-digit Virtual ID strictly satisfies statutory UIDAI D5 dihedral group polynomial.'
+          };
+        } else {
+          liveFeedback = {
+            type: 'invalid',
+            color: '#DC2626',
+            bg: '#FEF2F2',
+            border: '#FECACA',
+            icon: '✗',
+            title: 'UIDAI 16-Digit Virtual ID Checksum Failure',
+            detail: '16-digit Virtual ID failed Verhoeff D5 polynomial equation (c != 0).'
+          };
+        }
+      } else if (/^\d{12}$/.test(cleanId)) {
+        const vResult = ChecksumEngine.validateAadhaarVerhoeff(cleanId);
+        if (vResult.isValid) {
+          liveFeedback = {
+            type: 'valid',
+            color: '#16A34A',
+            bg: '#F0FDF4',
+            border: '#BBF7D0',
+            icon: '✓',
+            title: 'Verhoeff Checksum Satisfied (c = 0)',
+            detail: '12-digit number strictly satisfies statutory UIDAI D5 dihedral group polynomial.'
+          };
+        } else {
+          liveFeedback = {
+            type: 'invalid',
+            color: '#DC2626',
+            bg: '#FEF2F2',
+            border: '#FECACA',
+            icon: '✗',
+            title: `Verhoeff Mismatch (Expected Check Digit: ${vResult.expectedLastDigit})`,
+            detail: `Last digit is '${vResult.actualLastDigit}'. For prefix '${cleanId.slice(0, 4)} ${cleanId.slice(4, 8)} ${cleanId.slice(8, 11)}', check digit must be ${vResult.expectedLastDigit}.`,
+            suggestedDigit: vResult.expectedLastDigit,
+            cleanPrefix: cleanId.slice(0, 11)
+          };
+        }
+      } else if (isAadhaarType) {
+        liveFeedback = {
+          type: 'incomplete',
+          color: '#D97706',
+          bg: '#FFFBEB',
+          border: '#FDE68A',
+          icon: 'ℹ️',
+          title: `Incomplete Aadhaar Number (${cleanId.length}/12 Digits)`,
+          detail: 'Enter all 12 digits or standard UIDAI Masked format (XXXX-XXXX-1234).'
+        };
+      }
+    } else if (isPanType || /^([A-Za-z]{5}\d{4}[A-Za-z])$/.test(cleanId)) {
+      const panResult = ChecksumEngine.validatePAN(cleanId, formData.fullName?.split(' ').pop());
+      if (panResult.isValid) {
         liveFeedback = {
           type: 'valid',
           color: '#16A34A',
           bg: '#F0FDF4',
           border: '#BBF7D0',
           icon: '✓',
-          title: 'Verhoeff Checksum Satisfied (c = 0)',
-          detail: '12-digit number strictly satisfies statutory UIDAI D5 dihedral group polynomial.'
+          title: 'Valid Income Tax PAN Structure',
+          detail: panResult.message
         };
       } else {
         liveFeedback = {
@@ -75,21 +140,20 @@ export default function CardDataModal({ isOpen, onClose, currentTestCase, onSave
           bg: '#FEF2F2',
           border: '#FECACA',
           icon: '✗',
-          title: `Verhoeff Mismatch (Expected Check Digit: ${vResult.expectedLastDigit})`,
-          detail: `Last digit is '${vResult.actualLastDigit}'. For prefix '${cleanId.slice(0, 4)} ${cleanId.slice(4, 8)} ${cleanId.slice(8, 11)}', check digit must be ${vResult.expectedLastDigit}.`,
-          suggestedDigit: vResult.expectedLastDigit,
-          cleanPrefix: cleanId.slice(0, 11)
+          title: 'PAN Structure Invariant Alert',
+          detail: panResult.message
         };
       }
-    } else {
+    } else if (isPassportType || /^[A-PR-WYa-pr-wy][1-9]\d{6}$/.test(cleanId)) {
+      const passResult = ChecksumEngine.validatePassport(cleanId);
       liveFeedback = {
-        type: 'incomplete',
-        color: '#D97706',
-        bg: '#FFFBEB',
-        border: '#FDE68A',
-        icon: 'ℹ️',
-        title: `Incomplete Aadhaar Number (${cleanId.length}/12 Digits)`,
-        detail: 'Enter all 12 digits or standard UIDAI Masked format (XXXX-XXXX-1234).'
+        type: passResult.isValid ? 'valid' : 'invalid',
+        color: passResult.isValid ? '#16A34A' : '#DC2626',
+        bg: passResult.isValid ? '#F0FDF4' : '#FEF2F2',
+        border: passResult.isValid ? '#BBF7D0' : '#FECACA',
+        icon: passResult.isValid ? '✓' : '✗',
+        title: passResult.isValid ? 'Valid Passport Number Format' : 'Invalid Passport Format',
+        detail: passResult.message
       };
     }
   }

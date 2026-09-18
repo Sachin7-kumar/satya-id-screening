@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@google/genai": "^2.22.0",
+    "aadhaar-validator": "^1.1.0",
     "canvas-confetti": "^1.9.4",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "framer-motion": "^13.2.0",
+    "jsqr": "^1.4.0",
     "lucide-react": "^1.45.0",
     "pptxgenjs": "^4.0.1",
     "react": "^19.2.8",
