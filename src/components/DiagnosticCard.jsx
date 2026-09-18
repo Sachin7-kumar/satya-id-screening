@@ -118,6 +118,53 @@ export default function DiagnosticCard({ report, onOpenCertificate, onOpenEditDa
           <div className="sha-value" title={sha256}>{sha256}</div>
         </div>
 
+        {/* Active Identity Evidence Record Bar */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          background: '#F8FAFC',
+          border: '1px solid #E2E8F0',
+          borderRadius: '4px',
+          padding: '0.45rem 0.75rem',
+          margin: '0.75rem 0 0.5rem 0',
+          fontSize: '0.76rem'
+        }}>
+          <div>
+            <span style={{ color: '#64748B', fontWeight: 600 }}>Active Evidence: </span>
+            <strong style={{ color: 'var(--gov-navy)' }}>{testCase?.type || 'Identity Document'}</strong>
+            <span style={{ margin: '0 0.4rem', color: '#CBD5E1' }}>|</span>
+            <span style={{ color: '#64748B', fontWeight: 600 }}>Number: </span>
+            <code style={{
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              backgroundColor: algoResult.isValid ? '#DCFCE7' : '#FEE2E2',
+              color: algoResult.isValid ? '#166534' : '#991B1B',
+              padding: '0.15rem 0.45rem',
+              borderRadius: '3px'
+            }}>
+              {cardData.idNumber || 'NOT PROVIDED'}
+            </code>
+          </div>
+          <button
+            onClick={onOpenEditData}
+            className="gov-btn gov-btn-sm"
+            style={{
+              padding: '0.2rem 0.55rem',
+              fontSize: '0.72rem',
+              background: '#0B3C5D',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '3px',
+              cursor: 'pointer',
+              fontWeight: 600
+            }}
+            title="Edit Cardholder Particulars or Checksum Digits"
+          >
+            ✏️ Verify / Edit Number
+          </button>
+        </div>
+
         {/* 5-Tier Forensic Verification Table */}
         <div className="gov-table-heading">
           <span>5-TIER STATUTORY FORENSIC VERIFICATION BREAKDOWN</span>

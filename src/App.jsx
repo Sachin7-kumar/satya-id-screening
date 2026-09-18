@@ -176,7 +176,15 @@ export default function App() {
           idNumber = 'DL/04/021/892341';
         } else if (lowerName.includes('aadhaar') || lowerName.includes('adhar') || lowerName.includes('uid')) {
           docType = 'Aadhaar Card';
-          idNumber = '2894 1092 3849';
+          idNumber = '2384 9102 4856'; // Mathematically Valid Verhoeff (D5 polynomial): c = 0
+        }
+
+        // Check if filename contains a 12-digit Aadhaar number
+        const digitsMatch = file.name.match(/\b\d{4}[-\s]?\d{4}[-\s]?\d{4}\b/) || file.name.match(/\b\d{12}\b/);
+        if (digitsMatch) {
+          const rawDigits = digitsMatch[0].replace(/[-\s]/g, '');
+          docType = 'Aadhaar Card';
+          idNumber = `${rawDigits.slice(0, 4)} ${rawDigits.slice(4, 8)} ${rawDigits.slice(8, 12)}`;
         }
 
         // Clean name from filename if provided (e.g., "Rajesh_Sharma_Card.jpg" -> "Rajesh Sharma")
@@ -221,10 +229,35 @@ export default function App() {
           }
         };
 
+        // Attempt client-side QR barcode detection if supported by browser
+        if (typeof window !== 'undefined' && 'BarcodeDetector' in window) {
+          try {
+            const detector = new window.BarcodeDetector({ formats: ['qr_code'] });
+            detector.detect(canvas).then((barcodes) => {
+              if (barcodes && barcodes.length > 0) {
+                const raw = barcodes[0].rawValue || '';
+                const uidMatch = raw.match(/uid=["']?(\d{12}|[Xx\d]{12})/i) || raw.match(/\b(\d{4}\s?\d{4}\s?\d{4})\b/);
+                if (uidMatch) {
+                  const detectedDigits = uidMatch[1].replace(/\s+/g, '');
+                  if (detectedDigits.length === 12) {
+                    customCase.data.idNumber = `${detectedDigits.slice(0, 4)} ${detectedDigits.slice(4, 8)} ${detectedDigits.slice(8, 12)}`;
+                  }
+                }
+                const nameMatch = raw.match(/name=["']([^"']+)["']/i);
+                if (nameMatch) customCase.data.fullName = nameMatch[1];
+                runForensics(customCase, canvas, elaScale, elaThreshold);
+              }
+            }).catch(() => {});
+          } catch {
+            // Optional native barcode detection
+          }
+        }
+
         setActiveCaseId(customCase.id);
         setCurrentTestCase(customCase);
         setSourceCanvas(canvas);
         runForensics(customCase, canvas, elaScale, elaThreshold);
+        setIsEditDataOpen(true);
       };
       img.src = event.target.result;
     };
@@ -302,6 +335,10 @@ export default function App() {
       const certParam = urlParams.get('cert');
       if (certParam === 'open' || certParam === 'true') {
         setIsCertOpen(true);
+      }
+      const editParam = urlParams.get('edit');
+      if (editParam === 'open' || editParam === 'true') {
+        setIsEditDataOpen(true);
       }
     } catch {
       // Standby state by default

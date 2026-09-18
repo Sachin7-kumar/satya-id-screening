@@ -53,15 +53,37 @@ export const ChecksumEngine = {
 
   /**
    * Validate 12-digit Aadhaar number using Verhoeff algorithm
-   * @param {string} aadhaarStr - 12 digit string (spaces allowed)
+   * Supports both 12-digit raw Aadhaar and UIDAI statutory masked format (XXXX-XXXX-1234)
+   * @param {string} aadhaarStr - 12 digit string (spaces, hyphens allowed)
    * @returns {Object}
    */
   validateAadhaarVerhoeff(aadhaarStr) {
-    const cleanStr = String(aadhaarStr).replace(/\s+/g, '');
+    const rawInput = String(aadhaarStr || '').trim();
+    // Normalize punctuation: remove spaces, hyphens, dots, underscores, slashes
+    const cleanStr = rawInput.replace(/[\s\-_./]/g, '');
+
+    // 1. Support Statutory Masked Aadhaar format (XXXX-XXXX-1234, ••••-••••-1234, etc.)
+    const isMasked = /^([Xx*•]{8})(\d{4})$/.test(cleanStr) || /^([Xx*•]{4}[Xx*•]{4})(\d{4})$/.test(cleanStr);
+    if (isMasked) {
+      const last4 = cleanStr.slice(-4);
+      return {
+        isValid: true,
+        isMasked: true,
+        algorithm: 'Verhoeff (D5 Dihedral Group) - Masked Format',
+        standard: 'UIDAI Verhoeff Checksum (D5 Group)',
+        aadhaarMasked: `XXXX-XXXX-${last4}`,
+        status: 'VALID_MASKED_AADHAAR',
+        message: `Statutory Masked Aadhaar format verified (XXXX-XXXX-${last4}). Preserves cardholder privacy pursuant to UIDAI Regulations & Section 8 DPDP Act 2023.`
+      };
+    }
+
+    // 2. Validate standard 12 numeric digits
     if (!/^\d{12}$/.test(cleanStr)) {
       return {
         isValid: false,
-        message: `Invalid Aadhaar format: expected exactly 12 numeric digits, got ${cleanStr.length}`,
+        standard: 'UIDAI Verhoeff Checksum (D5 Group)',
+        status: 'INVALID_AADHAAR_FORMAT',
+        message: `Invalid Aadhaar structure: Expected 12 numeric digits or UIDAI Masked format (XXXX-XXXX-1234), received '${rawInput}' (${cleanStr.length} chars).`,
         errorType: 'FORMAT_ERROR'
       };
     }
@@ -76,16 +98,20 @@ export const ChecksumEngine = {
     const isValid = (c === 0);
     const expectedLastDigit = this.generateVerhoeffCheckDigit(cleanStr.slice(0, 11));
     const actualLastDigit = parseInt(cleanStr.slice(-1), 10);
+    const formattedAadhaar = `${cleanStr.slice(0, 4)} ${cleanStr.slice(4, 8)} ${cleanStr.slice(8, 12)}`;
 
     return {
       isValid,
       algorithm: 'Verhoeff (D5 Dihedral Group)',
       standard: 'UIDAI Verhoeff Checksum (D5 Group)',
       aadhaarMasked: `XXXX-XXXX-${cleanStr.slice(8)}`,
+      formattedAadhaar,
+      expectedLastDigit,
+      actualLastDigit,
       status: isValid ? 'VALID_CHECKSUM' : 'MATHEMATICAL_FORGERY_DETECTED',
       message: isValid 
-        ? 'Aadhaar mathematical checksum verified. 12-digit sequence satisfies UIDAI D5 dihedral group polynomial (c = 0).' 
-        : 'CRITICAL ALERT: Verhoeff checksum failure! This 12-digit number is mathematically impossible; manual modification detected.'
+        ? `Aadhaar mathematical checksum verified (${formattedAadhaar}). 12-digit sequence satisfies UIDAI D5 dihedral group polynomial (c = 0).` 
+        : `CRITICAL ALERT: Verhoeff checksum failure! For prefix '${cleanStr.slice(0, 4)} ${cleanStr.slice(4, 8)} ${cleanStr.slice(8, 11)}', statutory check digit is ${expectedLastDigit}, but entered '${actualLastDigit}'. Possible single-digit transposition or typo.`
     };
   },
 

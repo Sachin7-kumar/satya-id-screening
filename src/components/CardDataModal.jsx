@@ -1,4 +1,5 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ChecksumEngine } from '../forensics/checksums';
 
 export default function CardDataModal({ isOpen, onClose, currentTestCase, onSaveData }) {
   const [formData, setFormData] = useState({
@@ -41,6 +42,57 @@ export default function CardDataModal({ isOpen, onClose, currentTestCase, onSave
       address: 'NOT SPECIFIED / JURISDICTION UNRECORDED'
     });
   };
+
+  const cleanId = String(formData.idNumber || '').trim().replace(/[\s\-_./]/g, '');
+  let liveFeedback = null;
+  if (formData.docType === 'Aadhaar Card' && cleanId && cleanId !== 'NOT PROVIDED') {
+    if (/^([Xx*•]{8})(\d{4})$/.test(cleanId) || /^([Xx*•]{4}[Xx*•]{4})(\d{4})$/.test(cleanId)) {
+      liveFeedback = {
+        type: 'masked',
+        color: '#0284C7',
+        bg: '#F0F9FF',
+        border: '#BAE6FD',
+        icon: '🔒',
+        title: 'Statutory Masked Aadhaar (UIDAI Privacy Format)',
+        detail: `Valid privacy-compliant masked identifier (XXXX-XXXX-${cleanId.slice(-4)}). Preserves privacy pursuant to Section 8 DPDP Act 2023.`
+      };
+    } else if (/^\d{12}$/.test(cleanId)) {
+      const vResult = ChecksumEngine.validateAadhaarVerhoeff(cleanId);
+      if (vResult.isValid) {
+        liveFeedback = {
+          type: 'valid',
+          color: '#16A34A',
+          bg: '#F0FDF4',
+          border: '#BBF7D0',
+          icon: '✓',
+          title: 'Verhoeff Checksum Satisfied (c = 0)',
+          detail: '12-digit number strictly satisfies statutory UIDAI D5 dihedral group polynomial.'
+        };
+      } else {
+        liveFeedback = {
+          type: 'invalid',
+          color: '#DC2626',
+          bg: '#FEF2F2',
+          border: '#FECACA',
+          icon: '✗',
+          title: `Verhoeff Mismatch (Expected Check Digit: ${vResult.expectedLastDigit})`,
+          detail: `Last digit is '${vResult.actualLastDigit}'. For prefix '${cleanId.slice(0, 4)} ${cleanId.slice(4, 8)} ${cleanId.slice(8, 11)}', check digit must be ${vResult.expectedLastDigit}.`,
+          suggestedDigit: vResult.expectedLastDigit,
+          cleanPrefix: cleanId.slice(0, 11)
+        };
+      }
+    } else {
+      liveFeedback = {
+        type: 'incomplete',
+        color: '#D97706',
+        bg: '#FFFBEB',
+        border: '#FDE68A',
+        icon: 'ℹ️',
+        title: `Incomplete Aadhaar Number (${cleanId.length}/12 Digits)`,
+        detail: 'Enter all 12 digits or standard UIDAI Masked format (XXXX-XXXX-1234).'
+      };
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -94,6 +146,47 @@ export default function CardDataModal({ isOpen, onClose, currentTestCase, onSave
                 placeholder="e.g. 2384 9102 4856 or NOT PROVIDED"
                 style={{ width: '100%', padding: '0.45rem 0.6rem', fontSize: '0.78rem', border: '1px solid #CBD5E1', borderRadius: '4px' }}
               />
+              {liveFeedback && (
+                <div style={{
+                  marginTop: '0.4rem',
+                  padding: '0.45rem 0.6rem',
+                  borderRadius: '4px',
+                  backgroundColor: liveFeedback.bg,
+                  border: `1px solid ${liveFeedback.border}`,
+                  color: liveFeedback.color,
+                  fontSize: '0.72rem'
+                }}>
+                  <div style={{ fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                    <span>{liveFeedback.icon} {liveFeedback.title}</span>
+                    {liveFeedback.suggestedDigit !== undefined && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const fixed = `${liveFeedback.cleanPrefix}${liveFeedback.suggestedDigit}`;
+                          const formatted = `${fixed.slice(0, 4)} ${fixed.slice(4, 8)} ${fixed.slice(8, 12)}`;
+                          setFormData(prev => ({ ...prev, idNumber: formatted }));
+                        }}
+                        style={{
+                          background: '#DC2626',
+                          color: '#FFFFFF',
+                          border: 'none',
+                          borderRadius: '3px',
+                          padding: '0.15rem 0.4rem',
+                          fontSize: '0.68rem',
+                          cursor: 'pointer',
+                          fontWeight: 700,
+                          whiteSpace: 'nowrap'
+                        }}
+                      >
+                        Fix Check Digit to {liveFeedback.suggestedDigit}
+                      </button>
+                    )}
+                  </div>
+                  <div style={{ marginTop: '0.2rem', color: '#475569', fontSize: '0.69rem', lineHeight: 1.3 }}>
+                    {liveFeedback.detail}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
