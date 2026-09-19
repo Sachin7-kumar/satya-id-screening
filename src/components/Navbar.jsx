@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Navbar({ onOpenPresentation, onOpenGemini, onOpenCertificate }) {
+  const [serverOnline, setServerOnline] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/system-status')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (data && data.status === 'ONLINE') setServerOnline(true);
+      })
+      .catch(() => setServerOnline(false));
+  }, []);
+
   return (
     <header className="gov-site-header">
       <div className="header-main-container">
@@ -36,8 +47,8 @@ export default function Navbar({ onOpenPresentation, onOpenGemini, onOpenCertifi
         </div>
 
         <div className="header-actions-block">
-          <div className="gov-status-tag" title="100% In-RAM Local Edge Forensic Pipeline">
-            <span className="pulse-dot"></span> 100% In-RAM Local Edge
+          <div className="gov-status-tag" title={serverOnline ? "API Microservices Online & In-RAM Edge Active" : "100% In-RAM Local Edge Forensic Pipeline"}>
+            <span className="pulse-dot"></span> {serverOnline ? "API Online • In-RAM Edge" : "100% In-RAM Local Edge"}
           </div>
           <button onClick={onOpenCertificate} className="gov-btn gov-btn-gold" title="Open Statutory BSA 2023 Forensic Court Certificate">
             <span>⚖️</span> Section 63 BSA Certificate
