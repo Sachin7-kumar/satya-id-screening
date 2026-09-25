@@ -26,10 +26,12 @@ export const OFFICIAL_SIH_6_SLIDES = [
           <div><strong style="color: var(--accent-cyan);">• Organization:</strong> <span style="color: #fff;">Ministry of Home Affairs (MHA) / Indian Cyber Crime Coordination Centre (I4C)</span></div>
           <div><strong style="color: var(--accent-cyan);">• Team ID-</strong> <span style="font-family: var(--font-mono); color: #fff;">[Your Registered Team ID]</span></div>
           <div><strong style="color: var(--accent-cyan);">• Team Name (Registered on portal):</strong> <span style="font-weight: 800; color: var(--accent-gold);">Team SATYA-ID</span></div>
+          <div><strong style="color: var(--accent-cyan);">• Live Production URL:</strong> <a href="https://satya-id-screening.vercel.app" target="_blank" style="color: #34d399; font-weight: 700; text-decoration: underline; font-family: var(--font-mono);">https://satya-id-screening.vercel.app</a> <span style="font-size: 0.8rem; background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 6px; border-radius: 4px; border: 1px solid #059669;">200 OK Live</span></div>
+          <div><strong style="color: var(--accent-cyan);">• GitHub Repository:</strong> <a href="https://github.com/Sachin7-kumar/satya-id-screening" target="_blank" style="color: #38bdf8; font-weight: 700; text-decoration: underline; font-family: var(--font-mono);">https://github.com/Sachin7-kumar/satya-id-screening</a></div>
         </div>
       </div>
     `,
-    notes: "Respected Judges, we are Team SATYA-ID presenting our solution for the Ministry of Home Affairs on Problem Statement ID SIH26188: 'AI-Based Fake Identity & Document Screening System'. Today, we introduce an explainable, multi-spectral forensic screening engine built specifically for Indian identity infrastructure adhering strictly to the official 6-slide SIH 2026 format."
+    notes: "Respected Judges, we are Team SATYA-ID presenting our solution for the Ministry of Home Affairs on Problem Statement ID SIH26188: 'AI-Based Fake Identity & Document Screening System'. Today, we introduce an explainable, multi-spectral forensic screening engine built specifically for Indian identity infrastructure. Our solution is not just an idea, but a fully operational, deployed web application live on Vercel at satya-id-screening.vercel.app with open source code on GitHub."
   },
   {
     id: 2,
@@ -238,6 +240,8 @@ export const OFFICIAL_SIH_6_SLIDES = [
           <li><strong>[6] NIST FRVT &amp; Interpol (2023):</strong> Face Recognition: Morphing Attack Detection in Border E-Gates.</li>
           <li><strong>[7] TransUnion CIBIL &amp; RBI Study:</strong> Synthetic Identity Fraud Trends in Indian Retail Lending (₹1,400+ Cr defaults).</li>
           <li><strong>[8] DPDP Act 2023 (Section 8):</strong> Statutory compliance on zero citizen identity retention in memory.</li>
+          <li><strong>[9] Live Vercel Production:</strong> <a href="https://satya-id-screening.vercel.app" target="_blank" style="color: #34d399; font-family: var(--font-mono); text-decoration: underline;">https://satya-id-screening.vercel.app</a></li>
+          <li><strong>[10] GitHub Open Source Repo:</strong> <a href="https://github.com/Sachin7-kumar/satya-id-screening" target="_blank" style="color: #38bdf8; font-family: var(--font-mono); text-decoration: underline;">https://github.com/Sachin7-kumar/satya-id-screening</a></li>
         </ul>
 
         <div style="margin-top: 1rem; padding: 0.6rem 0.8rem; background: rgba(0, 240, 255, 0.08); border: 1px solid var(--accent-cyan); border-radius: 6px; font-size: 0.78rem; color: var(--accent-cyan);">
@@ -245,7 +249,7 @@ export const OFFICIAL_SIH_6_SLIDES = [
         </div>
       </div>
     `,
-    notes: "Slide 6 concludes our presentation with rigorous research citations: NCRB Crime in India 2023, DoT Sanchar Saathi portal, UIDAI Verhoeff polynomial specifications, Bharatiya Sakshya Adhiniyam 2023 Section 63, and NIST/Interpol face morphing research. Thank you, Judges. We are ready for your questions and live demonstration!"
+    notes: "Slide 6 concludes our presentation with rigorous research citations: NCRB Crime in India 2023, DoT Sanchar Saathi portal, UIDAI Verhoeff polynomial specifications, Bharatiya Sakshya Adhiniyam 2023 Section 63, and NIST/Interpol face morphing research. All code and live deployments are verified and accessible."
   },
   {
     id: 7,
@@ -253,12 +257,19 @@ export const OFFICIAL_SIH_6_SLIDES = [
     category: "WORKING PROTOTYPE",
     badge: "OPERATIONAL DEMO & BENCHMARKS (SLIDE 7)",
     content: `
-      <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.88rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.88rem;">
         
+        <!-- Live Links Bar -->
+        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--accent-cyan); border-radius: 8px; padding: 0.75rem 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; font-size: 0.85rem;">
+          <div><strong style="color: #34d399;">🟢 Live Vercel:</strong> <a href="https://satya-id-screening.vercel.app" target="_blank" style="color: #fff; font-family: var(--font-mono); text-decoration: underline;">satya-id-screening.vercel.app</a></div>
+          <div><strong style="color: #38bdf8;">🐙 GitHub:</strong> <a href="https://github.com/Sachin7-kumar/satya-id-screening" target="_blank" style="color: #fff; font-family: var(--font-mono); text-decoration: underline;">Sachin7-kumar/satya-id-screening</a></div>
+          <div><strong style="color: var(--accent-gold);">⚡ Performance:</strong> <span style="color: #fff; font-family: var(--font-mono);">18–34ms (1,620 docs/min)</span></div>
+        </div>
+
         <!-- Prototype Modules -->
-        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
-          <h4 style="color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 0.5rem;">
-            • Interactive Prototype Modules (Live at D:\\react\\satya-id-screening)
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.9rem;">
+          <h4 style="color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 0.4rem;">
+            • Interactive Prototype Modules (Live at satya-id-screening.vercel.app)
           </h4>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.82rem;">
             <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 6px;">
@@ -278,17 +289,17 @@ export const OFFICIAL_SIH_6_SLIDES = [
 
         <!-- Certificate & Benchmarks -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
-            <h4 style="color: var(--accent-gold); font-size: 0.92rem; margin-bottom: 0.5rem;">
+          <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem;">
+            <h4 style="color: var(--accent-gold); font-size: 0.92rem; margin-bottom: 0.4rem;">
               • Section 63 (BSA 2023) Automated Court Evidence Certificate
             </h4>
             <p style="font-size: 0.82rem; line-height: 1.45; color: var(--text-muted);">
-              Instant court-admissible certificate with SHA-256 seal &amp; per-tier scores.
+              Instant court-admissible certificate with SHA-256 seal, device telemetry &amp; per-tier scores.
             </p>
           </div>
 
-          <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
-            <h4 style="color: var(--accent-cyan); font-size: 0.92rem; margin-bottom: 0.5rem;">
+          <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem;">
+            <h4 style="color: var(--accent-cyan); font-size: 0.92rem; margin-bottom: 0.4rem;">
               • Live Prototype Test Cases &amp; Ground Benchmarks
             </h4>
             <ul style="padding-left: 1.1rem; line-height: 1.4; font-size: 0.82rem;">
@@ -302,7 +313,7 @@ export const OFFICIAL_SIH_6_SLIDES = [
 
       </div>
     `,
-    notes: "Slide 7 showcases our operational working prototype. All 5 forensic tiers, real-time ELA canvas, 3D strata viewer, and automated Section 63 BSA certificate generation are fully functional in the application."
+    notes: "Slide 7 showcases our operational working prototype. All 5 forensic tiers, real-time ELA canvas, 3D strata viewer, and automated Section 63 BSA certificate generation are fully functional in the live application."
   }
 ];
 

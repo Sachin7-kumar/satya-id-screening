@@ -32,6 +32,7 @@ test_rezip.pptx
 test_step.pptx
 slide_renders/
 slide_renders_2026/
+slide_renders_6slides/
 slide_renders_7slides/
 slide_renders_2026_7slides/
 sih_official_build_*/
@@ -41,3 +42,5 @@ prototype_minimal.png
 prototype_full.png
 bsa_certificate_preview.png
 bsa_certificate_seal_preview.png
+
+.vercel

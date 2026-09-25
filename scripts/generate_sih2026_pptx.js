@@ -158,105 +158,143 @@ export function buildOfficialPresentation2026(sourceTemplateDir, targetWorkDir, 
           <a:buChar char="•"/>
         </a:pPr>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>Problem Statement ID – </a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0070C0"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
-          <a:t>SIH1608</a:t>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0070C0"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t>SIH26188</a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="1800"><a:solidFill><a:srgbClr val="475569"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
-          <a:t> (Ministry of Home Affairs)</a:t>
+          <a:rPr lang="en-US" sz="1600"><a:solidFill><a:srgbClr val="475569"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t> (Ministry of Home Affairs / I4C)</a:t>
         </a:r>
       </a:p>
       <a:p>
         <a:pPr marL="285750" indent="-285750" algn="l">
-          <a:lnSpc><a:spcPct val="125000"/></a:lnSpc>
-          <a:spcBef><a:spcPts val="160"/></a:spcBef>
-          <a:spcAft><a:spcPts val="90"/></a:spcAft>
+          <a:lnSpc><a:spcPct val="118000"/></a:lnSpc>
+          <a:spcBef><a:spcPts val="110"/></a:spcBef>
+          <a:spcAft><a:spcPts val="60"/></a:spcAft>
           <a:buFont typeface="Arial"/>
           <a:buChar char="•"/>
         </a:pPr>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>Problem Statement Title- </a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="1900"><a:solidFill><a:srgbClr val="1E293B"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1700"><a:solidFill><a:srgbClr val="1E293B"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>AI-Based Fake Identity &amp; Document Screening System</a:t>
         </a:r>
       </a:p>
       <a:p>
         <a:pPr marL="285750" indent="-285750" algn="l">
-          <a:lnSpc><a:spcPct val="125000"/></a:lnSpc>
-          <a:spcBef><a:spcPts val="160"/></a:spcBef>
-          <a:spcAft><a:spcPts val="90"/></a:spcAft>
+          <a:lnSpc><a:spcPct val="118000"/></a:lnSpc>
+          <a:spcBef><a:spcPts val="110"/></a:spcBef>
+          <a:spcAft><a:spcPts val="60"/></a:spcAft>
           <a:buFont typeface="Arial"/>
           <a:buChar char="•"/>
         </a:pPr>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>Theme- </a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="1900"><a:solidFill><a:srgbClr val="1E293B"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
-          <a:t>Security &amp; Surveillance / Cyber Security</a:t>
+          <a:rPr lang="en-US" sz="1700"><a:solidFill><a:srgbClr val="1E293B"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t>Security &amp; Surveillance / Cyber Security / Smart Automation</a:t>
         </a:r>
       </a:p>
       <a:p>
         <a:pPr marL="285750" indent="-285750" algn="l">
-          <a:lnSpc><a:spcPct val="125000"/></a:lnSpc>
-          <a:spcBef><a:spcPts val="160"/></a:spcBef>
-          <a:spcAft><a:spcPts val="90"/></a:spcAft>
+          <a:lnSpc><a:spcPct val="118000"/></a:lnSpc>
+          <a:spcBef><a:spcPts val="110"/></a:spcBef>
+          <a:spcAft><a:spcPts val="60"/></a:spcAft>
           <a:buFont typeface="Arial"/>
           <a:buChar char="•"/>
         </a:pPr>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>PS Category- Software/Hardware: </a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="1900" b="1"><a:solidFill><a:srgbClr val="0070C0"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1700" b="1"><a:solidFill><a:srgbClr val="0070C0"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>Software</a:t>
         </a:r>
       </a:p>
       <a:p>
         <a:pPr marL="285750" indent="-285750" algn="l">
-          <a:lnSpc><a:spcPct val="125000"/></a:lnSpc>
-          <a:spcBef><a:spcPts val="160"/></a:spcBef>
-          <a:spcAft><a:spcPts val="90"/></a:spcAft>
+          <a:lnSpc><a:spcPct val="118000"/></a:lnSpc>
+          <a:spcBef><a:spcPts val="110"/></a:spcBef>
+          <a:spcAft><a:spcPts val="60"/></a:spcAft>
           <a:buFont typeface="Arial"/>
           <a:buChar char="•"/>
         </a:pPr>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>Team ID- </a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="1900"><a:solidFill><a:srgbClr val="475569"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1700"><a:solidFill><a:srgbClr val="475569"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>[Your Registered Team ID]</a:t>
         </a:r>
       </a:p>
       <a:p>
         <a:pPr marL="285750" indent="-285750" algn="l">
-          <a:lnSpc><a:spcPct val="125000"/></a:lnSpc>
-          <a:spcBef><a:spcPts val="160"/></a:spcBef>
-          <a:spcAft><a:spcPts val="90"/></a:spcAft>
+          <a:lnSpc><a:spcPct val="118000"/></a:lnSpc>
+          <a:spcBef><a:spcPts val="110"/></a:spcBef>
+          <a:spcAft><a:spcPts val="60"/></a:spcAft>
           <a:buFont typeface="Arial"/>
           <a:buChar char="•"/>
         </a:pPr>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>Team Name (Registered on portal): </a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="2000" b="1"><a:solidFill><a:srgbClr val="0070C0"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0070C0"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t>SATYA-ID</a:t>
         </a:r>
         <a:r>
-          <a:rPr lang="en-US" sz="1800"><a:solidFill><a:srgbClr val="475569"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:rPr lang="en-US" sz="1600"><a:solidFill><a:srgbClr val="475569"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
           <a:t> (National Document Screening Team)</a:t>
+        </a:r>
+      </a:p>
+      <a:p>
+        <a:pPr marL="285750" indent="-285750" algn="l">
+          <a:lnSpc><a:spcPct val="118000"/></a:lnSpc>
+          <a:spcBef><a:spcPts val="110"/></a:spcBef>
+          <a:spcAft><a:spcPts val="60"/></a:spcAft>
+          <a:buFont typeface="Arial"/>
+          <a:buChar char="•"/>
+        </a:pPr>
+        <a:r>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t>Live Production URL: </a:t>
+        </a:r>
+        <a:r>
+          <a:rPr lang="en-US" sz="1700" b="1" u="sng"><a:solidFill><a:srgbClr val="059669"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t>https://satya-id-screening.vercel.app</a:t>
+        </a:r>
+        <a:r>
+          <a:rPr lang="en-US" sz="1500"><a:solidFill><a:srgbClr val="10B981"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t> [200 OK Live]</a:t>
+        </a:r>
+      </a:p>
+      <a:p>
+        <a:pPr marL="285750" indent="-285750" algn="l">
+          <a:lnSpc><a:spcPct val="118000"/></a:lnSpc>
+          <a:spcBef><a:spcPts val="110"/></a:spcBef>
+          <a:spcAft><a:spcPts val="60"/></a:spcAft>
+          <a:buFont typeface="Arial"/>
+          <a:buChar char="•"/>
+        </a:pPr>
+        <a:r>
+          <a:rPr lang="en-US" sz="1800" b="1"><a:solidFill><a:srgbClr val="0F172A"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t>GitHub Repository: </a:t>
+        </a:r>
+        <a:r>
+          <a:rPr lang="en-US" sz="1700" b="1" u="sng"><a:solidFill><a:srgbClr val="0070C0"/></a:solidFill><a:latin typeface="Arial"/><a:cs typeface="Arial"/></a:rPr>
+          <a:t>https://github.com/Sachin7-kumar/satya-id-screening</a:t>
         </a:r>
       </a:p>
     </p:txBody>`;
@@ -349,17 +387,17 @@ export function buildOfficialPresentation2026(sourceTemplateDir, targetWorkDir, 
     makeSectionHeader('Proposed Solution (Describe your Idea/Solution/Prototype)'),
     
     makePointer('Detailed explanation of the proposed solution'),
-    makeSubBullet('Multi-Spectral 5-Tier Forensic Engine', '(<40ms Scan Time)'),
-    makeSubBullet('Zero-Storage In-RAM Execution', '(DPDP Act 2023 Compliant)'),
-    makeSubBullet('Operational Working Prototype', 'with Live Forensics HUD'),
+    makeSubBullet('Multi-Spectral 5-Tier Forensic Engine:', 'Math Checksums, ELA, Metrology, Face Morph, Gemini AI (<40ms)'),
+    makeSubBullet('Zero-Storage In-RAM Execution:', 'Section 8 DPDP Act 2023 compliant; 0 disk persistence'),
+    makeSubBullet('Operational Web Application:', 'Live on Vercel (https://satya-id-screening.vercel.app)'),
 
     makePointer('How it addresses the problem'),
-    makeSubBullet('Detects Pixel Tampering & Font Drift', '(Bypasses Blind OCR)'),
-    makeSubBullet('Halts Ground Cybercrime', '(71.2% Document Forgery in NCRB)'),
+    makeSubBullet('Pixel-Level Tamper Forensics:', 'Exposes splices & font drift that bypass blind OCR models'),
+    makeSubBullet('Halts Ground Cybercrime:', 'Targets 71.2% document forgery in 65,893+ NCRB cases'),
 
     makePointer('Innovation and uniqueness of the solution'),
-    makeSubBullet('Automated Section 63 BSA 2023', 'Cryptographic Evidence Seals'),
-    makeSubBullet('Edge-Native Velocity:', '18–34ms Latency | 1,620 Docs/Min | <0.18% FPR')
+    makeSubBullet('Automated Section 63 BSA 2023:', 'Court-admissible electronic certificate with SHA-256 seal'),
+    makeSubBullet('Edge-Native Velocity:', '18–34ms Latency | 1,620 Docs/Min | <0.18% FPR on commodity PCs')
   ].join('');
 
   updateContentSlide(2, 'IDEA TITLE', s2Content, {
@@ -382,13 +420,14 @@ export function buildOfficialPresentation2026(sourceTemplateDir, targetWorkDir, 
   // 3. SLIDE 3: TECHNICAL APPROACH (WITH EXACT 2026 POINTERS & 5-STAGE FLOWCHART)
   const s3Content = [
     makePointer('Technologies to be used (e.g. programming languages, frameworks, hardware)'),
-    makeSubBullet('Core Forensic Engines:', 'C++, WebAssembly & Python (OpenCV, DCT Fourier)'),
-    makeSubBullet('Platform Stack:', 'React 19 + Vite HUD, Node.js, Express 5, Canvas API'),
-    makeSubBullet('AI & Hardware:', 'Google AI Studio (Gemini Flash) | Commodity PC (4GB RAM, 0 GPU)'),
+    makeSubBullet('Forensic Core Engines:', 'C++, WebAssembly & Python (OpenCV, DCT Fourier, Verhoeff D5)'),
+    makeSubBullet('Platform Stack:', 'React 19 + Vite HUD, Express 5 Serverless on Vercel, Node.js'),
+    makeSubBullet('Open-Source Repository:', 'https://github.com/Sachin7-kumar/satya-id-screening'),
+    makeSubBullet('AI & Hardware Specs:', 'Google AI Studio (Gemini Flash) | Commodity PC (4GB RAM, 0 GPU)'),
 
     makePointer('Methodology and process for implementation (Flow Charts/Images/ working prototype)'),
-    makeSubBullet('5-Stage Sequential Pipeline:', 'RAM Ingestion ➔ Math Checksums ➔ ELA ➔ Metrology/AI ➔ Sec 63 BSA'),
-    makeSubBullet('Validated Edge Benchmarks:', '100% Offline Autonomy | 18–34ms Latency | 1,620 Docs/Min')
+    makeSubBullet('5-Stage Sequential Pipeline:', 'RAM Ingest ➔ Checksums (<5ms) ➔ ELA Physics ➔ Metrology/Morph ➔ Sec 63 BSA'),
+    makeSubBullet('Validated Edge Benchmarks:', '18–34ms Latency | 1,620 Docs/Min | 100% Offline Edge Autonomy')
   ].join('');
 
   updateContentSlide(3, 'TECHNICAL APPROACH', s3Content, {
@@ -415,7 +454,7 @@ export function buildOfficialPresentation2026(sourceTemplateDir, targetWorkDir, 
     makeSubBullet('Complete Edge Autonomy:', '18–34ms Scan | 1,620 Docs/Min Edge Autonomy', '1250', '48', '24'),
 
     makePointer('Potential challenges and risks'),
-    makeSubBullet('GenAI Inpainting:', 'Diffusion Synthesis Without Pixel Boundaries', '1250', '48', '24'),
+    makeSubBullet('GenAI Inpainting Risk:', 'Diffusion synthesis generates realistic text without pixel seams', '1250', '48', '24'),
     makeSubBullet('Social Media Noise:', 'Multi-Pass WhatsApp/Telegram Recompression', '1250', '48', '24'),
     makeSubBullet('Judicial Scrutiny:', 'Legal Evidentiary Defense Challenges in Court', '1250', '48', '24'),
 
@@ -476,14 +515,15 @@ export function buildOfficialPresentation2026(sourceTemplateDir, targetWorkDir, 
   // 6. SLIDE 6: RESEARCH AND REFERENCES (WITH EXACT 2026 POINTER & COMPLIANCE CARD)
   const s6Content = [
     makePointer('Details / Links of the reference and research work'),
-    makeSubBullet('[1] NCRB "Crime in India 2023":', '65,893 Cases (71.2% Document Forgery Rate)', '1200', '40', '20'),
-    makeSubBullet('[2] DoT Sanchar Saathi & ASTR:', '67.2 Lakh Fraudulent Ghost SIM Cards Blocked', '1200', '40', '20'),
-    makeSubBullet('[3] Dr. Neal Krawetz (Black Hat):', 'Digital Image Error Level Analysis (ELA) Standards', '1200', '40', '20'),
-    makeSubBullet('[4] UIDAI Statutory Specs:', 'Verhoeff Dihedral Group D5 Checksum', '1200', '40', '20'),
-    makeSubBullet('[5] Bharatiya Sakshya Adhiniyam 2023:', 'Section 63 Evidence Admissibility', '1200', '40', '20'),
-    makeSubBullet('[6] NIST FRVT & Interpol (2023):', 'Face Morphing Attack Detection Standards', '1200', '40', '20'),
-    makeSubBullet('[7] TransUnion CIBIL & RBI Study:', 'Synthetic ID Fraud in Retail Lending', '1200', '40', '20'),
-    makeSubBullet('[8] DPDP Act 2023 (Section 8):', 'Zero Citizen ID Retention Memory Mandate', '1200', '40', '20')
+    makeSubBullet('[1] NCRB "Crime in India 2023":', '65,893 Cases (71.2% Document Forgery Rate) – ncrb.gov.in', '1200', '38', '18'),
+    makeSubBullet('[2] DoT Sanchar Saathi & ASTR:', '67.2 Lakh Fraudulent Ghost SIM Cards Blocked – sancharsaathi.gov.in', '1200', '38', '18'),
+    makeSubBullet('[3] Dr. Neal Krawetz (Black Hat):', 'Digital Image Error Level Analysis (ELA) Forensic Standards', '1200', '38', '18'),
+    makeSubBullet('[4] UIDAI Statutory Specs:', 'Verhoeff Dihedral Group D5 Checksum Algorithm', '1200', '38', '18'),
+    makeSubBullet('[5] Bharatiya Sakshya Adhiniyam 2023:', 'Section 63 Evidence Admissibility (replacing Sec 65B)', '1200', '38', '18'),
+    makeSubBullet('[6] NIST FRVT & Interpol (2023):', 'Face Morphing Attack Detection Standards in Border E-Gates', '1200', '38', '18'),
+    makeSubBullet('[7] DPDP Act 2023 (Section 8):', 'Statutory Mandate: Zero Citizen ID Retention in Memory', '1200', '38', '18'),
+    makeSubBullet('[8] Live Vercel Production:', 'https://satya-id-screening.vercel.app', '1200', '38', '18'),
+    makeSubBullet('[9] GitHub Open Source Repo:', 'https://github.com/Sachin7-kumar/satya-id-screening', '1200', '38', '18')
   ].join('');
 
   updateContentSlide(6, 'RESEARCH AND REFERENCES', s6Content, {
@@ -513,18 +553,20 @@ export function buildOfficialPresentation2026(sourceTemplateDir, targetWorkDir, 
     let s7NewXml = s4Xml.replace(/<a:t>4<\/a:t>/g, '<a:t>7</a:t>'); // Slide number 7
 
     const s7Content = [
-      makePointer('Interactive Prototype Modules (Live at D:\\react\\satya-id-screening)'),
-      makeSubBullet('Multi-Spectral ELA Visualizer:', 'Real-Time Differencing with 10x–45x Gain'),
-      makeSubBullet('3D Strata Exploder:', 'Interactive Surface & Baseline Decomposition'),
-      makeSubBullet('Algorithmic Invariants Engine:', 'Verhoeff D5, PAN Regex & MRZ Checks (<5ms)'),
-      makeSubBullet('Gemini Multimodal AI Copilot:', 'Contextual Anomaly Inquest via Gemini Flash'),
+      makePointer('Operational Software Deployment & Live Links'),
+      makeSubBullet('Live Production URL:', 'https://satya-id-screening.vercel.app (Status: 200 OK | SSL Secure)'),
+      makeSubBullet('Open Source Codebase:', 'https://github.com/Sachin7-kumar/satya-id-screening (Full Stack)'),
+      makeSubBullet('Live Serverless APIs:', '/api/scan | /api/threat-intel | /api/system-status | /api/generate-cert'),
+
+      makePointer('Interactive Prototype Modules & Forensic HUD'),
+      makeSubBullet('Multi-Spectral ELA Visualizer:', 'Real-time Q=92% differencing with dynamic 10x–45x delta gain'),
+      makeSubBullet('3D Strata Exploder:', 'Interactive separation of surface substrate, ink & digital overlays'),
+      makeSubBullet('Algorithmic Invariants Engine:', 'Verhoeff D5, PAN regex, and MRZ 7-3-1 checks (<5ms)'),
+      makeSubBullet('Gemini Multimodal AI Copilot:', 'Contextual semantic anomaly reasoning via Gemini Flash'),
 
       makePointer('Section 63 (BSA 2023) Automated Court Evidence Certificate'),
-      makeSubBullet('Cryptographic PDF Evidence:', 'Instant Legal Export with Verifiable SHA-256 Seal'),
-
-      makePointer('Live Prototype Test Cases & Ground Benchmarks'),
-      makeSubBullet('Demonstrated Test Suites:', 'Aadhaar (22ms) | PAN DOB (19ms) | Passport MRZ (4ms)'),
-      makeSubBullet('Edge Performance Benchmarks:', '18–34ms Latency | 1,620 Docs/Min | 100% Offline Edge')
+      makeSubBullet('Cryptographic PDF Evidence:', 'Instant legal export with SHA-256 seal & hardware telemetry'),
+      makeSubBullet('Validated Edge Benchmarks:', '18–34ms Latency | 1,620 Docs/Min | <0.18% FPR | 100% Offline Edge')
     ].join('');
 
     fs.writeFileSync(s7Path, s7NewXml, 'utf8');
@@ -578,10 +620,11 @@ export function buildOfficialPresentation2026(sourceTemplateDir, targetWorkDir, 
 }
 
 // 1. Build Official 6-slide SIH 2026 Presentation
+const deck6Path = 'd:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID-6slides.pptx';
 buildOfficialPresentation2026(
   'template_2026_unzipped',
   'd:/react/satya-id-screening/sih_official_build_2026_6slides',
-  'd:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID.pptx',
+  deck6Path,
   false
 );
 
@@ -593,19 +636,26 @@ function safeCopy(src, dest) {
   }
 }
 
-// Copy to Downloads & public
-safeCopy('d:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID.pptx', 'C:/Users/Sachin/Downloads/SIH2026-IDEA-Presentation-SATYA-ID.pptx');
-safeCopy('d:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID.pptx', 'd:/react/satya-id-screening/public/SIH2026-IDEA-Presentation-SATYA-ID.pptx');
+// Keep standard aliases
+safeCopy(deck6Path, 'd:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID.pptx');
+safeCopy(deck6Path, 'C:/Users/Sachin/Downloads/SIH2026-IDEA-Presentation-SATYA-ID-6slides.pptx');
+safeCopy(deck6Path, 'C:/Users/Sachin/Downloads/SIH2026-IDEA-Presentation-SATYA-ID.pptx');
+safeCopy(deck6Path, 'd:/react/satya-id-screening/public/SIH2026-IDEA-Presentation-SATYA-ID-6slides.pptx');
+safeCopy(deck6Path, 'd:/react/satya-id-screening/public/SIH2026-IDEA-Presentation-SATYA-ID.pptx');
 
 // 2. Build 7-slide SIH 2026 Presentation (with Prototype Showcase)
+const deck7Path = 'd:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID-7slides-with-prototype.pptx';
 buildOfficialPresentation2026(
   'template_2026_unzipped',
   'd:/react/satya-id-screening/sih_official_build_2026_7slides',
-  'd:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx',
+  deck7Path,
   true
 );
 
-safeCopy('d:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx', 'C:/Users/Sachin/Downloads/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx');
-safeCopy('d:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx', 'd:/react/satya-id-screening/public/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx');
+safeCopy(deck7Path, 'd:/react/satya-id-screening/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx');
+safeCopy(deck7Path, 'C:/Users/Sachin/Downloads/SIH2026-IDEA-Presentation-SATYA-ID-7slides-with-prototype.pptx');
+safeCopy(deck7Path, 'C:/Users/Sachin/Downloads/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx');
+safeCopy(deck7Path, 'd:/react/satya-id-screening/public/SIH2026-IDEA-Presentation-SATYA-ID-7slides-with-prototype.pptx');
+safeCopy(deck7Path, 'd:/react/satya-id-screening/public/SIH2026-IDEA-Presentation-SATYA-ID-with-prototype.pptx');
 
 console.log('✓ All 2026 PPTX files built and copied to Downloads & public!');
